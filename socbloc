@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# meant to toggle blocking and unblocking social network websites
+# must be run as superuser
+
+# checks if websites are blocked in /etc/hosts
+# and toggles between blocked and unblocked
+
+# it's very ad hoc and made to suit my own configuration
+# and must be manually changed should my /etc/hosts change
+
+r=$((12 + $RANDOM % 62)) 			# selects random line number within range 
+pattern="${r}q;d" 				# creates a sed pattern with said line number
+char=$(sed $pattern /etc/hosts | cut -c1) 	# checks the first char in line 
+
+if [ "$char" = "#" ]; then
+ 	sed -i '12,74s/^#//' /etc/hosts	
+elif [ "$char" = "0" ]; then
+ 	sed -i '12,75s/^/#/' /etc/hosts	
+fi
+
+       
