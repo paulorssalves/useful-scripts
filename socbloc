@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# IN ORDER FOR THIS TO WORK IT *MAY* BE NECESSARY TO 
+# DISABLE BROWSER CACHING (true for brave; not true for qutebrowser)
+
 # meant to toggle blocking and unblocking social network websites
 # must be run as superuser
 
