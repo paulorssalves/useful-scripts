@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# IN ORDER FOR THIS TO WORK IT *MAY* BE NECESSARY TO 
+# DISABLE BROWSER CACHING (true for brave; not true for qutebrowser)
+
 # meant to toggle blocking and unblocking social network websites
 # must be run as superuser
 
@@ -9,7 +12,11 @@
 # it's very ad hoc and made to suit my own configuration
 # and must be manually changed should my /etc/hosts change
 
-r=$((12 + $RANDOM % 62)) 			# selects random line number within range 
+# this is the range in which I keep the websites that I block. Change to suit needs.
+START=11
+STOP=62
+
+r=$(($START + $RANDOM % $STOP)) 			# selects random line number within range 
 pattern="${r}q;d" 				# creates a sed pattern with said line number
 char=$(sed $pattern /etc/hosts | cut -c1) 	# checks the first char in line 
 
