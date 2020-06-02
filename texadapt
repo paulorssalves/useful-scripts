@@ -1,0 +1,8 @@
+#!/bin/sh 
+
+# talvez seja necessário alterar o valor do
+# diretório do texaccent.sed
+
+target=$1
+
+sed -f ./texaccent.sed -i $target
