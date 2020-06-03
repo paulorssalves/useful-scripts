@@ -8,3 +8,4 @@ just some minor scripts to get things done faster; automate boring stuff and wha
 * ever2org_changename.sh: editar o nome de arquivos importados do evernote usando o [EverOrg](https://github.com/mgmart/EverOrg) para um formato que me é mais agradável.
 * socbloc: bloquear e desbloquear sites dentro de um intervalo de linhas em /etc/hosts/
 * runs: simplesmente uma abreviação para o runserver do Django
+* getgcalvar: extrai determinadas envvars do .bashrc para usar no setup do gcal no emacs
