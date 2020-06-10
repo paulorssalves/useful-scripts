@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # IN ORDER FOR THIS TO WORK IT *MAY* BE NECESSARY TO 
 # DISABLE BROWSER CACHING (true for brave; not true for qutebrowser)
@@ -14,14 +14,21 @@
 
 START=12
 STOP=74
-r=$(($START + $RANDOM % $STOP)) 			# selects random line number within range 
-pattern="${r}q;d" 				# creates a sed pattern with said line number
-char=$(sed $pattern /etc/hosts | cut -c1) 	# checks the first char in line 
 
-if [ "$char" = "#" ]; then
- 	sed -i "${START},${STOP}s/^#//" /etc/hosts	
-elif [ "$char" = "0" ]; then
- 	sed -i "${START},${STOP}s/^/#/" /etc/hosts	
+FIRSTLINE="1q;d"
+
+if [ "$(sed "1q;d" /etc/hosts | cut -d'=' -f1)" != "# SOCBLOC_STATUS" ] ; then
+       sed -i "1s/^/\# SOCBLOC_STATUS=OFF\n\0/" /etc/hosts
 fi
 
-       
+STATUS=$(sed $FIRSTLINE /etc/hosts | cut -d'=' -f2)  #checks the status 	
+
+if [ "$STATUS" = "ON" ]; then
+ 	sed -i --expression "${START},${STOP}s/^#//" \
+	       --expression "1s/ON/OFF/"  /etc/hosts 	
+
+elif [ "$STATUS" = "OFF" ]; then
+ 	sed -i --expression "${START},${STOP}s/^/#/" \
+	       --expression "1s/OFF/ON/"  /etc/hosts 	
+fi
+
