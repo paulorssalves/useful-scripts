@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# because I never remember how to properly use git filter-branch
+
+PATTERN=""
+TARGET=""
+
+git filter-branch -f --tree-filter "find . -name '$TARGET' -exec sed -i -e $PATTERN {} \;"
+
