@@ -10,12 +10,12 @@ CURRENT_SINK=$(echo $CURRENT_SINK_PRE | cut -d "<" -f 2 | cut -d">" -f 1)
 
 # get audio output sink monitor (to send to input source) 
 SINK_MONITOR_PRE=$(echo $CURRENT_SINK | awk 'BEGIN {FS="-"} ; {print $2}')
-SINK_MONITOR=$(echo $(pacmd list-sources | grep -e $SINK_MONITOR_PRE | awk   'BEGIN {FS=":"} ; {print $2}') | cut -d "<" -f 2 | cut -d ">" -f 1)
+SINK_MONITOR=$(echo $(pacmd list-sources | grep -e $SINK_MONITOR_PRE | awk 'BEGIN {FS=":"} ; {print $2}') | cut -d "<" -f 2 | cut -d ">" -f 1)
 
 BUILTIN_ANALOG_STEREO_AUDIO_PRE=$(pacmd list-sources | grep -e alsa_input | grep -e analog-stereo)
 BUILTIN_ANALOG_STEREO_AUDIO=$(echo $BUILTIN_ANALOG_STEREO_AUDIO_PRE | cut -d '<' -f 2 | cut -d '>' -f 1)
 
-if [ "$CURRENT_SOURCE" = $BUILTIN_ANALOG_STEREO_AUDIO ] ; then
+if [ $CURRENT_SOURCE = $BUILTIN_ANALOG_STEREO_AUDIO ] ; then
     printf "audio source is default ($CURRENT_SOURCE).\nChanging to sink monitor ($SINK_MONITOR)...\n"
     pactl set-default-source $SINK_MONITOR
 else
