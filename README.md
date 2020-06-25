@@ -18,7 +18,7 @@ Pequenos scripts para automatizar alguns processos
 * notes_to_anki.py: formatar anotações em arquivos de texto para um formato .csv próprio para importação pelo Anki
 * ankidapt.sh: igual ao notes_to_anki.py, mas fazendo uso de unixtools
 
-#### outros
+### outros
 * change-audio-source: alterna entre fontes de input de áudio -- ora entre o microfone, ora entre o output (envia o output para o input, para que terceiros possam ouvir os sons do computador quando necessário, e.g., numa conferência online)
 * socbloc: bloquear e desbloquear sites dentro de um intervalo de linhas em /etc/hosts/
 * replace_in_history: template para remoção de conteúdo sensitivo de um repositório git
