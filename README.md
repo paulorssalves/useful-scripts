@@ -1,4 +1,4 @@
-# Uma pequena lista de scripts que me são úteis
+## Uma pequena lista de scripts que me são úteis
 Pequenos scripts para automatizar alguns processos
 
 ### relacionado ao Emacs
