@@ -19,6 +19,7 @@ Pequenos scripts para automatizar alguns processos
 * ankidapt.sh: igual ao notes_to_anki.py, mas fazendo uso de unixtools
 
 ### outros
-* change-audio-source: alterna entre fontes de input de áudio -- ora entre o microfone, ora entre o output (envia o output para o input, para que terceiros possam ouvir os sons do computador quando necessário, e.g., numa conferência online)
+* change-audio-source: alterna entre fontes de input de áudio -- ora entre o microfone, ora entre o output 
+  * envia o output para o input, para que terceiros possam ouvir os sons do computador quando necessário, e.g., numa conferência online; se executado de novo, retorna o input para a fonte padrão (i.e., microfone)
 * socbloc: bloquear e desbloquear sites dentro de um intervalo de linhas em /etc/hosts/
 * replace_in_history: template para remoção de conteúdo sensitivo de um repositório git
