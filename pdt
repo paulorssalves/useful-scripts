@@ -1,0 +1,19 @@
+#!/bin/sh
+
+dashline() {
+s=1
+printf " " 
+while [  $s -lt 76 ] 
+do
+	printf "-"
+	s=$((s+1))
+done
+printf "\n"
+}
+
+dashline
+ps aux | awk -F "|" 'BEGIN { FS = " " } NR==1{printf(" | %-10s| %-10s | %-10s| %-10s| %-10s| %-10s |\n", $1, $2, $3,$4,$5,$6)}'
+dashline
+ps aux | grep $1 | awk -F "|" 'BEGIN { FS = " " } {printf(" | %-10s| %-10s | %-10s| %-10s| %-10s| %-10s |\n", $1, $2, $3,$4,$5,$6)}'
+dashline
+

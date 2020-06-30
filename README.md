@@ -23,3 +23,4 @@ Pequenos scripts para automatizar alguns processos
   * envia o output para o input, para que terceiros possam ouvir os sons do computador quando necessário, e.g., numa conferência online; se executado de novo, retorna o input para a fonte padrão (i.e., microfone)
 * socbloc: bloquear e desbloquear sites dentro de um intervalo de linhas em /etc/hosts/
 * replace_in_history: template para remoção de conteúdo sensitivo de um repositório git
+* pdt: simplesmente um wrapper de awk em volta de "ps aux | grep var" pra deixar o output mais bonitinho
