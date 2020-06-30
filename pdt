@@ -3,7 +3,7 @@
 dashline() {
 s=1
 printf " " 
-while [  $s -lt 76 ] 
+while [  $s -lt 109 ] 
 do
 	printf "-"
 	s=$((s+1))
@@ -12,8 +12,8 @@ printf "\n"
 }
 
 dashline
-ps aux | awk -F "|" 'BEGIN { FS = " " } NR==1{printf(" | %-10s| %-10s | %-10s| %-10s| %-10s| %-10s |\n", $1, $2, $3,$4,$5,$6)}'
+ps aux | awk -F "|" 'BEGIN { FS = " " } NR==1{printf(" | %-10s| %-10s | %-10s| %-10s| %-10s| %-10s | %-30s |\n", $1, $2, $3,$4,$9, $10, $11)}'
 dashline
-ps aux | grep $1 | awk -F "|" 'BEGIN { FS = " " } {printf(" | %-10s| %-10s | %-10s| %-10s| %-10s| %-10s |\n", $1, $2, $3,$4,$5,$6)}'
+ps aux | grep $1 | awk -F "|" 'BEGIN { FS = " " } {printf(" | %-10s| %-10s | %-10s| %-10s| %-10s| %-10s | %-30s |\n", $1, $2, $3,$4,$9,$10,$11)}'
 dashline
 
