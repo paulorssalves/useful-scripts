@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+
+
+# obviously ad-hoc, as merely the name can't provide info as to whether
+# a package is a lib or not. However, it should give an not-too-inaccurate 
+# light on this matter
+
+import portage
+
+
+
+
+n = portage.db["/"]["vartree"].dbapi.cpv_all()
+
+answer = input("print package names? [y/n]: ")
+
+libnum = 0
+pkg = 0
+for i in n:
+    if answer.lower() == "y":
+        print(i)
+    if "lib" not in i:
+        pkg+=1
+    else:
+        libnum +=1
+
+print("\nnumber of non-lib packages: {}\nnumber of libs: {}\ntotal: {}".format(pkg, libnum, len(n)))
