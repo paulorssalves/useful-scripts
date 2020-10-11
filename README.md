@@ -24,3 +24,4 @@ Pequenos scripts para automatizar alguns processos
 * socbloc: bloquear e desbloquear sites dentro de um intervalo de linhas em /etc/hosts/
 * replace_in_history: template para remoção de conteúdo sensitivo de um repositório git
 * pdt: simplesmente um wrapper de awk em volta de "ps aux | grep var" pra deixar o output mais bonitinho
+* packagenum: para averiguar o número de pacotes instalados no Gentoo.
