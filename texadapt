@@ -5,4 +5,4 @@
 
 target=$1
 
-sed -f ./texaccent.sed -i $target
+sed -f /home/paulo/.bin/texaccent.sed -i $target
